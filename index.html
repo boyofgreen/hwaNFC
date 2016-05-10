@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Pratt - Free Bootstrap 3 Theme">
+    <meta name="author" content="Alvarez.is - BlackTie.co">
+    <link rel="shortcut icon" href="assets/ico/favicon.png">
+
+    <title>Pratt - Free Bootstrap 3 Theme</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="assets/css/bootstrap.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="assets/css/main.css" rel="stylesheet">
+    
+    <link href='http://fonts.googleapis.com/css?family=Lato:300,400,700,300italic,400italic' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Raleway:400,300,700' rel='stylesheet' type='text/css'>
+    
+    <script src="assets/js/jquery.min.js"></script>
+    <script src="assets/js/smoothscroll.js"></script>
+		<style>
+			            #modalScan {
+                position: fixed;
+                top: 0;
+                right: 0;
+                bottom: 0;
+                left: 0;
+                background: #34495e;
+                z-index: 99999;
+                text-align: center;
+                pointer-events: none;
+								font-size:2em;
+								color: white;
+								padding: 20%;
+								display:none;
+}
+
+#scanText{
+	
+	
+}
+#goText{
+	display:none
+}
+body .badgeIcon{
+	padding: 10px;
+
+	
+}
+
+
+			
+		</style>
+    
+
+  </head>
+
+  <body data-spy="scroll" data-offset="0" data-target="#navigation">
+
+    <!-- Fixed navbar -->
+	    <div id="navigation" class="navbar navbar-default navbar-fixed-top">
+	      <div class="container">
+	        <div class="navbar-header">
+	          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+	            <span class="icon-bar"></span>
+	            <span class="icon-bar"></span>
+	            <span class="icon-bar"></span>
+	          </button>
+	          <a class="navbar-brand" href="#"><b>JS ROcks Conf</b></a>
+	        </div>
+	        <div class="navbar-collapse collapse">
+	          <ul class="nav navbar-nav">
+	            <li class="active"><a href="#home" class="smothscroll">Home</a></li>
+	            <li><a href="#desc" class="smothscroll">Register</a></li>
+	            <li><a href="#showcase" class="smothScroll">Sessions</a></li>
+	            <li><a href="#contact" class="smothScroll">Badge</a></li>
+	          </ul>
+	        </div><!--/.nav-collapse -->
+	      </div>
+	    </div>
+
+
+	<section id="home" name="home"></section>
+	<div id="headerwrap">
+	    <div class="container">
+	    	<div class="row centered">
+			<div class="row centered">
+				<div class="col-lg-4" id="badgeSection">
+					<img src="assets/img/intro03.png" alt="" >
+					<h3>Use Badge</h3>
+
+				</div>
+				<div class="col-lg-4">
+					<img src="assets/img/intro01.png" alt="">
+					<h3>Socail</h3>
+					
+				</div>
+				<div class="col-lg-4">
+					<img src="assets/img/intro02.png" alt="">
+					<h3>Schedule</h3>
+
+				</div>
+
+			</div>
+
+
+	    	</div>
+	    </div> <!--/ .container -->
+	</div><!--/ #headerwrap -->
+
+
+	<section id="desc" name="desc"></section>
+	<!-- INTRO WRAP -->
+	<div id="intro">
+		<div class="container">
+
+			<br>
+			<hr>
+	    </div> <!--/ .container -->
+	</div><!--/ #introwrap -->
+	
+	<!-- FEATURES WRAP -->
+	<div id="features">
+		<div class="container">
+			
+		</div><!--/ .container -->
+	</div><!--/ #features -->
+	
+	
+
+	
+
+
+	<section id="contact" name="contact"></section>
+	
+	<div id="c">
+
+	</div>
+
+
+<div id="modalScan">
+	<img class="badgeIcon" src="assets/img/intro03.png" />
+	<p id="scanText">scan your badge</p>
+	<p id="goText">good to go!</p>
+</div>
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="assets/js/bootstrap.js"></script>
+
+  </body>
+
+	    <script>
+				if(window.Windows){
+        var proximityDevice = Windows.Networking.Proximity.ProximityDevice.getDefault();
+
+        if (proximityDevice != null) {
+            proximityDevice.addEventListener("devicearrived", function (dataObj) {
+
+                document.querySelector('.badgeIcon').style.backgroundColor = 'green'
+								document.querySelector('#goText').display = 'inline';
+								document.querySelector('#scanText').display = 'none';
+
+            }, false);
+            proximityDevice.addEventListener("devicedeparted", function (dataObj) {
+
+                document.querySelector('.badgeIcon').style.backgroundColor = 'orange'
+
+            }, false);
+        }
+
+				}
+document.getElementById('badgeSection').addEventListener('click', function(){
+	
+document.getElementById('modalScan').style.display = 'block';
+})
+    </script>
+	
+	</script>
+</html>
